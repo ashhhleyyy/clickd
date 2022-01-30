@@ -1,0 +1,11 @@
+# NodeJS
+node_modules/
+# Config
+config.toml
+# Compiled tracker+dashboard JS
+build/
+dist/
+# Compiled executable
+clickd
+# VSCode
+.vscode/

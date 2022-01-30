@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "swc ./tracker.ts -o build/tracker.js"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.135"
+  }
+}

@@ -1,0 +1,31 @@
+.table {
+    text-align: center;
+    width: 100%;
+    border-spacing: 0 4px;
+    text-align: left;
+    margin: 0 8px;
+}
+
+.heading {
+    width: 100%;
+    font-weight: bold;
+}
+
+.countHeading {
+    font-weight: bold;
+    text-align: right;
+}
+
+.count {
+    text-align: right;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.referer-icon {
+    margin-right: 4px;
+}
