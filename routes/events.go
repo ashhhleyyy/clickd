@@ -28,7 +28,7 @@ func TrackEvent(c *gin.Context) {
 		Height  int32  `json:"height" binding:"required"`
 	}
 
-	domain := c.Request.Referer()
+	domain := c.Request.Header.Get("Origin")
 
 	if c.Bind(&body) == nil {
 		refererUrl, err := url.Parse(body.Referer)
