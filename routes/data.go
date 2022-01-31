@@ -14,7 +14,7 @@ type ViewByDay struct {
 }
 
 func GetViewsByDay(c *gin.Context) {
-	var result []ViewByDay
+	var result []ViewByDay = []ViewByDay{}
 	rows, err := model.Database.Raw("SELECT DATE(timestamp) as date, COUNT(*) as count FROM events GROUP BY date ORDER BY date").Rows()
 
 	if err != nil {
@@ -47,7 +47,7 @@ type Ranking struct {
 }
 
 func GetPageRankings(c *gin.Context) {
-	var result []Ranking
+	var result []Ranking = []Ranking{}
 	rows, err := model.Database.Raw("SELECT domain, path, COUNT(*) as count FROM events GROUP BY domain, path ORDER BY count DESC LIMIT 10").Rows()
 	if err != nil {
 		panic(err)
@@ -75,7 +75,7 @@ func GetPageRankings(c *gin.Context) {
 }
 
 func GetRefererRankings(c *gin.Context) {
-	var result []Ranking
+	var result []Ranking = []Ranking{}
 	rows, err := model.Database.Raw("SELECT referer, COUNT(*) as count FROM events WHERE referer != '' GROUP BY referer ORDER BY count DESC LIMIT 10").Rows()
 	if err != nil {
 		panic(err)
