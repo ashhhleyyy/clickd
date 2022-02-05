@@ -36,12 +36,13 @@ func TrackEvent(c *gin.Context) {
 			panic(err)
 		}
 		tx := model.Database.Create(&model.Event{
-			Domain:    domain,
-			Timestamp: time.Now(),
-			Path:      body.Path,
-			Referer:   refererUrl.Host,
-			Width:     body.Width,
-			Height:    body.Height,
+			Domain:      domain,
+			Timestamp:   time.Now(),
+			Path:        body.Path,
+			Referer:     body.Referer,
+			RefererHost: refererUrl.Host,
+			Width:       body.Width,
+			Height:      body.Height,
 		})
 		tx.Commit()
 		c.JSON(http.StatusAccepted, gin.H{

@@ -40,8 +40,9 @@ function RankingTable(endpoint: string, title: string, counter: string, KeyDispl
 export const TopPagesTable = RankingTable('/page-rankings', 'Path', 'Views')
 
 export const TopReferersTable = RankingTable('/referer-rankings', 'Referer', 'Referals', ({ s }) => {
+    const url = new URL(s);
     return <span className="icon-item">
-        <img src={`https://icons.duckduckgo.com/ip3/${s}.ico`} width={24} height={24} className="referer-icon" />
+        <img src={`https://icons.duckduckgo.com/ip3/${url.host}.ico`} width={24} height={24} className="referer-icon" />
         {s}
     </span>
 })
